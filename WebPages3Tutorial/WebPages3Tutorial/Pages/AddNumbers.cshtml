@@ -1,9 +1,11 @@
 ﻿@page
-@using WebPages3Tutorial.Pages
+@using WebPages3Tutorial
+@namespace WebPages3Tutorial.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @model AddNumbersModel
 @{
     ViewData["Title"] = "Home page";
-    var totalMessage = "";
 }
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
 <body>
 		
 <p>Enter two whole numbers and then click <strong>Add</strong>.</p>
-<form action="" method="post">
+<form method="post">
     <p>
         <label for="text1">First Number:</label>
         <input type="text" name="text1" />

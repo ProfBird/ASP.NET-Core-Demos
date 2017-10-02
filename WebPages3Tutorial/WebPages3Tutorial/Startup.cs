@@ -38,6 +38,7 @@ namespace WebPages3Tutorial
             }
 
             app.UseStaticFiles();
+            app.UseMvc();
 
             app.UseMvc(routes =>
             {
@@ -45,6 +46,7 @@ namespace WebPages3Tutorial
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+
         }
     }
 }
