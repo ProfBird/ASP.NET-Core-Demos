@@ -4,22 +4,23 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Blocks of Code</title>
+    <title>Semicolons End Statements</title>
 </head>
 <body>
-
-<!-- Single statement block.  -->
+		
+<!-- Single-statement block -->
 @{ var theMonth = DateTime.Now.Month; }
-<p>The numeric value of the current month: @theMonth</p>
 
-<!-- Multi-statement block. -->
+<!-- Multi-statement block -->
 @{
     var outsideTemp = 79;
     var weatherMessage = "Hello, it is " + outsideTemp + " degrees.";
 }
-<p>Today's weather: @weatherMessage</p>
-		
-<a href="Index">Home</a>
 
+<!-- Inline expression, so no semicolon -->
+<p>Today's weather: @weatherMessage</p>
+
+<a href="Index">Home</a>
+		
 </body>
 </html>
