@@ -1,0 +1,21 @@
+﻿@page
+@model AddNumbersModel
+@{
+    ViewData["Title"] = "Home page";
+    var totalMessage = "";
+}
+
+<p>Enter two whole numbers and then click <strong>Add</strong>.</p>
+<form action="" method="post">
+    <p>
+        <label for="text1">First Number:</label>
+        <input type="text" name="text1" />
+    </p>
+    <p>
+        <label for="text2">Second Number:</label>
+        <input type="text" name="text2" />
+    </p>
+    <p><input type="submit" value="Add" /></p>
+</form>
+
+<p>@Model.TotalMessage</p>
