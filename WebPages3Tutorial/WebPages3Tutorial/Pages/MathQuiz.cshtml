@@ -1,0 +1,31 @@
+﻿@page
+@using WebPages3Tutorial
+@namespace WebPages3Tutorial.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model MathQuizModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Math Quiz</title>
+</head>
+<body>
+
+    <h1>Math Quiz</h1>
+    <p>Problem: <br /> @Model.Number1 + @Model.Number2</p>
+    <form method="post">
+        <p>
+            <label for="text1">Answer:</label>
+            <input type="text" name="Answer" />
+        </p>
+        <input type="hidden" name="number1" value=@Model.Number1 />
+        <input type="hidden" name="number2" value=@Model.Number2/>
+
+        <p><input type="submit" value="Check Answer" /></p>
+    </form>
+    <p>@Model.Result</p>
+    <a href="Index">Home</a>
+
+</body>
+</html>
