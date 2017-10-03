@@ -17,15 +17,16 @@
     <form method="post">
         <p>
             <label for="text1">Answer:</label>
-            <input type="text" name="Answer" />
+            <input type="text" name="answer" />
         </p>
-        <input type="hidden" name="number1" value=@Model.Number1 />
-        <input type="hidden" name="number2" value=@Model.Number2/>
+        <input type="hidden" name="number1" value="@Model.Number1" />
+        <input type="hidden" name="number2" value="@Model.Number2" />
 
         <p><input type="submit" value="Check Answer" /></p>
     </form>
     <p>@Model.Result</p>
-    <a href="Index">Home</a>
+		
+    <a href="MathQuiz">New Problem</a>
 
 </body>
 </html>

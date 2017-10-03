@@ -10,6 +10,7 @@ namespace WebPages3Tutorial.Pages
         public string Number1 { get; set; }
         public string Number2 { get; set; }
         public string Result { get; set; }
+
         public void OnGet()
         {
             Number1 = random.Next(0, 101).ToString();
@@ -18,14 +19,17 @@ namespace WebPages3Tutorial.Pages
 
         public IActionResult OnPost()
         {
-            int answer = int.Parse(Request.Form["Answer"]);
-            int number1 = int.Parse(Request.Form["number1"]);
-            int number2 = int.Parse(Request.Form["number2"]);
+            Number1 = Request.Form["number1"];
+            int n1 = int.Parse(Number1);
+            Number2 = Request.Form["number2"];
+            int n2 = int.Parse(Number2);
+			int answer = int.Parse(Request.Form["answer"]);
 
-            if (answer == number1 + number2)
-                Result = "Gold star for you!";
+			if (answer == n1 + n2)
+                Result = "A gold star for you!";
             else
-                Result = "Sorry!";
+                Result = "Sorry! Try again";
+            
             return Page();
         }
     }
