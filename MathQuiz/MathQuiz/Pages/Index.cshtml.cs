@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebPages3Tutorial.Pages
+namespace MathQuiz.Pages
 {
     public class MathQuizModel : PageModel
     {
