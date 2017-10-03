@@ -21,15 +21,23 @@ namespace WebPages3Tutorial.Pages
         {
             Number1 = Request.Form["number1"];
             int n1 = int.Parse(Number1);
+            int.TryParse(Number1, out n1);
             Number2 = Request.Form["number2"];
             int n2 = int.Parse(Number2);
-			int answer = int.Parse(Request.Form["answer"]);
-
-			if (answer == n1 + n2)
-                Result = "A gold star for you!";
+            string answer = Request.Form["answer"];
+            int answerInt;
+            if( int.TryParse(answer, out answerInt))
+            {
+				if (answerInt == n1 + n2)
+					Result = "A gold star for you!";
+				else
+					Result = "Sorry! Try again";
+			}
             else
-                Result = "Sorry! Try again";
-            
+            {
+                Result = "Please enter a valid integer";
+            }
+			
             return Page();
         }
     }
