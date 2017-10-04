@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz", "MathQuiz\MathQuiz.csproj", "{02031386-CA85-414D-ACC4-85985094BAA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz2", "MathQuiz2\MathQuiz2.csproj", "{B8B76459-8605-4D5A-AE92-B9EDB95B64EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz3", "MathQuiz3\MathQuiz3.csproj", "{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{02031386-CA85-414D-ACC4-85985094BAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02031386-CA85-414D-ACC4-85985094BAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02031386-CA85-414D-ACC4-85985094BAA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B76459-8605-4D5A-AE92-B9EDB95B64EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B76459-8605-4D5A-AE92-B9EDB95B64EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B76459-8605-4D5A-AE92-B9EDB95B64EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B76459-8605-4D5A-AE92-B9EDB95B64EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

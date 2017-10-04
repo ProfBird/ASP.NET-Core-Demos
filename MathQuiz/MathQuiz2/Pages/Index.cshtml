@@ -1,0 +1,20 @@
+﻿@page
+@model MathQuizModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Math Quiz";
+}
+
+    <h1>Math Quiz</h1>
+    <p>Problem: <br /> @Model.Number1 + @Model.Number2</p>
+    <form method="post">
+        <p>
+            <label for="text1">Answer:</label>
+            <input type="text" name="answer" />
+        </p>
+
+        <p><input type="submit" value="Check Answer" /></p>
+    </form>
+    <p>@Model.Result</p>
+        
+    <a href="Index">New Problem</a>
