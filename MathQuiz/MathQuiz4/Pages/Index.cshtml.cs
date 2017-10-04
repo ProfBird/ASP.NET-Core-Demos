@@ -2,16 +2,20 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MathQuiz3;
+using MathQuiz4;
 
-namespace MathQuiz3.Pages
+namespace MathQuiz4.Pages
 {
     public class MathQuizModel : PageModel
     {
         MathQuiz quiz = null;
-        public int Number1 { get { return quiz.Number1; } }
-        public int Number2 { get { return quiz.Number2; } }
         public string Result { get; set; }
+
+        [BindProperty]
+        public MathQuiz Quiz 
+        { 
+            get { return quiz; } 
+        }
 
         const string RAND_NUMBER_1 = "RandNumber1";
         const string RAND_NUMBER_2 = "RandNumber2";
@@ -30,16 +34,7 @@ namespace MathQuiz3.Pages
                 (int)HttpContext.Session.GetInt32(RAND_NUMBER_2)
             );
 
-            string answerString = Request.Form["answer"];
-            int answer;
-            if (int.TryParse(answerString, out answer))
-            {
-                Result = quiz.CheckAnswer(answer);
-            }
-            else
-            {
-                Result = "Please enter a valid integer";
-            }
+            Result = quiz.CheckAnswer();
 
             return Page();
         }

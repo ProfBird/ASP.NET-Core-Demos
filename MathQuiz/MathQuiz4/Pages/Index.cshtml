@@ -1,0 +1,23 @@
+﻿@page
+@model MathQuizModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Math Quiz";
+}
+
+    <h1>Math Quiz</h1>
+    <p>Problem: <br /> @Model.Quiz.Number1 + @Model.Quiz.Number2</p>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+	    <p>
+		    Enter your answer:
+		    <input asp-for="Quiz.Answer" type="number"/>
+        </p>
+        <p>
+	        <input type="submit" value="Check Answer" />
+	    </p>
+    </form>
+
+    <p>@Model.Result</p>
+        
+    <a href="Index">New Problem</a>

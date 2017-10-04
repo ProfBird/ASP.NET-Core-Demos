@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz2", "MathQuiz2\Math
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz3", "MathQuiz3\MathQuiz3.csproj", "{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz4", "MathQuiz4\MathQuiz4.csproj", "{9278B642-3340-4510-BBCF-DEB6E8A49EAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F8E4A6E-528A-4461-B2C1-4FBCA4BA8A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
