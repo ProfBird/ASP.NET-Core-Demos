@@ -11,4 +11,9 @@
   <ItemGroup>
     <Compile Remove="Pages\Index.cshtml.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\CodeWithObjects.cshtml.cs">
+      <DependentUpon>CodeWithObjects.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

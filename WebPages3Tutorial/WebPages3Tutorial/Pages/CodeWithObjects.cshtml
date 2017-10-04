@@ -1,0 +1,38 @@
+﻿@page
+@model CodeWithObjectsModel
+@using WebPages3Tutorial
+@namespace WebPages3Tutorial.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>At Marks C# Code</title>
+</head>
+<body>
+
+<table border="1">
+<tr>
+    <td>Requested URL</td>
+    <td>Relative Path</td>
+    <td>Full Path</td>
+    <td>HTTP Request Type</td>
+</tr>
+<tr>
+    <td>@Model.RequestUrl</td>
+    <td>@Model.FilePath</td>
+    <td>@Model.MapPath</td>
+    <td>@Model.RequestType</td>
+</tr>
+</table>
+<p> The original Web Pages tutorial used the Request properties and methods shown below. I have not found the equivalents for Razor Pages yet</p>
+<ul>
+	<li>Request.Url</li>
+    <li>Request.FilePath</li>
+    <li>Request.MapPath(Request.FilePath)</li>
+    <li>Request.RequestType</li>
+</ul>
+
+</body>
+</html>
