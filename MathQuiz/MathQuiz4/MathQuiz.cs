@@ -19,10 +19,15 @@ namespace MathQuiz4
             set { number2 = value; } 
         }
 
-		int answer = 0;
+        public string Result 
+        {
+            get { return CheckAnswer(); }
+        }
+
+		int? answer = null;
         [Required]
         [Range(0, 200)]
-        public int Answer { 
+        public int? Answer { 
             get { return answer; }
             set { answer = value; }
         }
@@ -30,7 +35,7 @@ namespace MathQuiz4
         public MathQuiz()
         {
 			Random random = new Random();
-			number1 = random.Next(0, 101);
+			number1 = random.Next(0, 101);  // generate numbers from 0 to 100
 			number2 = random.Next(0, 101);
 		}
 
@@ -40,13 +45,16 @@ namespace MathQuiz4
 			number2 = n2;
 		}
 
-        public string CheckAnswer()
+        private string CheckAnswer()
         {
             string result;
-			if (answer == number1 + number2)
-				result = "A gold star for you!";
-			else
-				result = "Sorry! Try again";
+            if (answer == null)  // this means no answer has been set
+                result = "";
+            else if (answer == number1 + number2)
+                result = "A gold star for you!";
+            else
+                result = "Sorry! Try again";
+
             return result;
         }
     }

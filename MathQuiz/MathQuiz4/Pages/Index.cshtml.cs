@@ -8,9 +8,7 @@ namespace MathQuiz4.Pages
 {
     public class MathQuizModel : PageModel
     {
-        public string Result { get; set; }  // called after OnGet, or after OnPost
-
-        [BindProperty]
+       [BindProperty]
         public MathQuiz Quiz { get; set; } // get is called before OnPost. Watch out!
 
 
@@ -32,7 +30,6 @@ namespace MathQuiz4.Pages
             // MathQuiz is a bound property
             Quiz.Number1 = HttpContext.Session.GetInt32(RAND_NUMBER_1) ?? 0;
             Quiz.Number2 = HttpContext.Session.GetInt32(RAND_NUMBER_2) ?? 0;
-            Result = Quiz.CheckAnswer();
 
             return Page();
         }
