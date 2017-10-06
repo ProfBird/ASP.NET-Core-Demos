@@ -3,7 +3,9 @@ namespace MathQuiz3
 {
     public class MathQuiz
     {
-        int number1;
+		// **** Properties ****
+
+		int number1;
         public int Number1 
         {
             get { return number1; }
@@ -17,20 +19,24 @@ namespace MathQuiz3
             set { number2 = value; } 
         }
 
-        public MathQuiz()
-        {
+		// **** Constructors ****
+
+		public MathQuiz()                   // use this constructor in OnGet 
+		{                                   // to generate random numbers
 			Random random = new Random();
-			number1 = random.Next(0, 101);
+			number1 = random.Next(0, 101);  // generate numbers from 0 to 100
 			number2 = random.Next(0, 101);
 		}
 
-        public MathQuiz(int n1, int n2)
-        {
+		public MathQuiz(int n1, int n2)     // use this constructor in OnPost 
+		{                                   // when retrieving stored random numbers
  			number1 = n1;
 			number2 = n2;
 		}
 
-        public string CheckAnswer(int answer)
+		// **** Methods ****
+
+		public string CheckAnswer(int answer)
         {
             string result;
 			if (answer == number1 + number2)

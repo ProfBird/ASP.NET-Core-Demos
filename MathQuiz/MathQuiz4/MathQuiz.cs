@@ -43,12 +43,6 @@ namespace MathQuiz4
 			number2 = random.Next(0, 101);
 		}
 
-        public MathQuiz(int n1, int n2)     // use this constructor in OnPost 
-        {                                   // to retrieve stored random numbers
-			number1 = n1;
-			number2 = n2;
-		}
-
         // **** Methods ****
 
         private string CheckAnswer()
