@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Tic_Tac_Toe.Pages
+namespace TicTacToeGame.Pages
 {
     public class IndexModel : PageModel
     {

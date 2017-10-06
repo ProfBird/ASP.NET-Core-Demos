@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tic-Tac-Toe", "Tic-Tac-Toe\Tic-Tac-Toe.csproj", "{F424B856-EF94-4117-B124-5F5E4D9B7FD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Test", "TicTacToe.Test\TicTacToe.Test.csproj", "{BD554416-A21A-41E3-8AA9-879B5EC52F22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,14 @@ Global
 		{F424B856-EF94-4117-B124-5F5E4D9B7FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F424B856-EF94-4117-B124-5F5E4D9B7FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F424B856-EF94-4117-B124-5F5E4D9B7FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD554416-A21A-41E3-8AA9-879B5EC52F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD554416-A21A-41E3-8AA9-879B5EC52F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD554416-A21A-41E3-8AA9-879B5EC52F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD554416-A21A-41E3-8AA9-879B5EC52F22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
 	EndGlobalSection
 EndGlobal
