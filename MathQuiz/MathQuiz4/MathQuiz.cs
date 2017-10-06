@@ -5,6 +5,8 @@ namespace MathQuiz4
 {
     public class MathQuiz
     {
+        // **** Properties ****
+
         int number1;
         public int Number1 
         {
@@ -24,26 +26,30 @@ namespace MathQuiz4
             get { return CheckAnswer(); }
         }
 
-		int? answer = null;
-        [Required]
+		int? answer = null;     // Initially null so nothing is displayed after a HTTP GET
+        [Required]              // Validation rulse
         [Range(0, 200)]
         public int? Answer { 
             get { return answer; }
             set { answer = value; }
         }
 
-        public MathQuiz()
-        {
-			Random random = new Random();
+        // **** Constructors ****
+
+        public MathQuiz()                   // use this constructor in OnGet 
+		{                                   // to generate random numbers
+			Random random = new Random();   
 			number1 = random.Next(0, 101);  // generate numbers from 0 to 100
 			number2 = random.Next(0, 101);
 		}
 
-        public MathQuiz(int n1, int n2)
-        {
- 			number1 = n1;
+        public MathQuiz(int n1, int n2)     // use this constructor in OnPost 
+        {                                   // to retrieve stored random numbers
+			number1 = n1;
 			number2 = n2;
 		}
+
+        // **** Methods ****
 
         private string CheckAnswer()
         {
