@@ -2,7 +2,7 @@ using System;
 using Xunit;
 using TicTacToeGame;
 
-namespace TicTacToe.Test
+namespace TicTacToeGame.Test
 {
     public class UnitTest
     {
@@ -10,6 +10,7 @@ namespace TicTacToe.Test
         public void ConstructorTest()
         {
             var game = new TicTacToe();
+
         }
     }
 }
