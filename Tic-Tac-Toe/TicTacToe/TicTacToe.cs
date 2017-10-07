@@ -48,6 +48,7 @@ namespace TicTacToeGame
         }
 
         // See if it's X's turn or O's
+        // first turn is always X
         public char GetTurn()
         {
             UpdateXOCount();
