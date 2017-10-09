@@ -16,7 +16,7 @@ Demo ASP.NET web app for CS95N at LCC
 * MathQuiz4: Uses Tag Helpers and model binding
     * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties
     * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
-* MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
+* MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4 -- __Not done yet__
 
 ----
 

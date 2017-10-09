@@ -27,7 +27,7 @@ namespace MathQuiz4
         }
 
 		int? answer = null;     // Initially null so nothing is displayed after a HTTP GET
-        [Required]              // Validation rulse
+        [Required]              // Validation rules
         [Range(0, 200)]
         public int? Answer { 
             get { return answer; }
