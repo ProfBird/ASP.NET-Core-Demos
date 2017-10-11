@@ -51,21 +51,21 @@ namespace TicTacToeGame.Test
 
         private void Row0X()
         {
-			game.AddMark(0, 0); //X
-			game.AddMark(1, 0); //O
-			game.AddMark(0, 1); //X
-			game.AddMark(1, 1); //O
-			game.AddMark(0, 2); //X
+			game.SetMark(0, 0); //X
+			game.SetMark(1, 0); //O
+			game.SetMark(0, 1); //X
+			game.SetMark(1, 1); //O
+			game.SetMark(0, 2); //X
 		}
 
         private void Row1O()
         {
-			game.AddMark(0, 0); //X
-			game.AddMark(1, 0); //O
-			game.AddMark(2, 1); //X
-			game.AddMark(1, 1); //O
-			game.AddMark(0, 2); //X
-			game.AddMark(1, 2); //O
+			game.SetMark(0, 0); //X
+			game.SetMark(1, 0); //O
+			game.SetMark(2, 1); //X
+			game.SetMark(1, 1); //O
+			game.SetMark(0, 2); //X
+			game.SetMark(1, 2); //O
 
 		}
 	}

@@ -14,6 +14,22 @@ namespace TicTacToeGame
         public const int COLS = 3;
         private int xCount, oCount; // number of Os and Xs currently on the grid
 
+        public byte[] Grid { 
+            get {
+                byte[] byteGrid = new byte[ROWS * COLS];
+                for (int r = 0; r < ROWS; r++)
+                    for (int c = 0; c < COLS; c++)
+                        byteGrid[r * ROWS + c] = (byte)gameGrid[r, c];
+                return byteGrid;
+                } 
+
+            set {
+                for (int r = 0; r < ROWS; r++)
+                    for (int c = 0; c < COLS; c++)
+                        gameGrid[r, c] = (char)value[r * ROWS + c];
+            }
+        }
+
         // This constructor uses an initialization list to set all the elements
         // of the gameGrid array to spaces.
         public TicTacToe()
@@ -22,6 +38,7 @@ namespace TicTacToeGame
             xCount = 0;
             oCount = 0;
         }
+
 
         // Counts the number of ones and zeros
         // (used by methods that determine the number of turns and whose turn it is)
@@ -60,7 +77,7 @@ namespace TicTacToeGame
 
         // Add a mark (either X or O depending on turn) to the grid
         // Returns false if there was already a mark there
-        public bool AddMark(int row, int col)
+        public bool SetMark(int row, int col)
         {
             if (gameGrid[row, col] != ' ' || CheckForWinner() != ' ')
                 return false;
@@ -72,9 +89,16 @@ namespace TicTacToeGame
             return true;
         }
 
-        public char GetMark(int r, int c)
+        public string GetMark(int r, int c)
         {
-            return gameGrid[r, c];
+            string mark = gameGrid[r, c].ToString();
+
+            if (mark == " ")
+            {
+                mark = "blank";
+            }
+
+            return mark;
         }
 
         public char CheckForWinner()
