@@ -22,7 +22,7 @@ namespace TicTacToeGame.Test
             bool allEmpty = true;
             for (int r = 0; r < TicTacToe.ROWS; r++)
                 for (int c = 0; c < TicTacToe.COLS; c++)
-                    if (game.GetMark(r, c) != ' ')
+                    if (game.GetMark(r, c) != "blank")
                         allEmpty = false;
             
             Assert.True(allEmpty);
