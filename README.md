@@ -35,7 +35,7 @@ only want code for one app.
 
 ----
 
-I wrote these apps for use with CS295N, Web Development 1:ASP.NET Android, a class I teach at Lane Community College.
+I wrote these apps for use with CS295N, Web Development 1:ASP.NET Android, a class I teach at Lane Community College. Other course materials are here: <https://github.com/LCC-CIT/CS295N-CourseMaterials>
 
 My blog:
 <https://birdsbits.wordpress.com>
