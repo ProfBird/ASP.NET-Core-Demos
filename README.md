@@ -26,6 +26,12 @@ only want code for one app.
         * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties
         * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
     * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
+  * Tic-Tac-Toe: The classic game
+  		* Loads images when squares are clicked
+  		* Game state is saved in the Session object
+  		* HTML buttons have name and value attributes that determine arguments sent to the OnPost method
+  		* Has game-play logic in a separate class
+  		* Has unit tests
 
 ----
 
