@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+    <table>
+        <tr>
+            <td>
+                <label for="input"></label>
+                <input type="text" name="input"/><br />
+                <button type="submit" asp-page-handler="Roman">To Roman</button>
+            </td>
+            <td>
+                output: <br />
+                <div>@Model.Output</div><br />
+                <button type="submit" asp-page-handler="Decimal">To Decimal</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
