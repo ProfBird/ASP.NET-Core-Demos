@@ -26,10 +26,16 @@ only want code for one app.
         * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties
         * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
     * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
+  * Tic-Tac-Toe: The classic game
+    * Loads images when squares are clicked
+    * Game state is saved in the Session object
+    * HTML buttons have name and value attributes that determine arguments sent to the OnPost method
+    * Has game-play logic in a separate class
+    * Has unit tests
 
 ----
 
-I wrote these apps for use with CS295N, Web Development 1:ASP.NET Android, a class I teach at Lane Community College.
+I wrote these apps for use with CS295N, Web Development 1:ASP.NET Android, a class I teach at Lane Community College. Other course materials are here: <https://github.com/LCC-CIT/CS295N-CourseMaterials>
 
 My blog:
 <https://birdsbits.wordpress.com>

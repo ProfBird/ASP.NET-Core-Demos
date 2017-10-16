@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz4.Tests", "MathQuiz.Tests\MathQuiz4.Tests.csproj", "{712037C1-DA5D-45B2-8E7E-659F84E4BBB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9278B642-3340-4510-BBCF-DEB6E8A49EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712037C1-DA5D-45B2-8E7E-659F84E4BBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712037C1-DA5D-45B2-8E7E-659F84E4BBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712037C1-DA5D-45B2-8E7E-659F84E4BBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712037C1-DA5D-45B2-8E7E-659F84E4BBB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
