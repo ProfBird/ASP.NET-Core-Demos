@@ -14,7 +14,9 @@ namespace TicTacToeGame
         public const int COLS = 3;
         private int xCount, oCount; // number of Os and Xs currently on the grid
 
+        // just here to accomodate the.Net Core Session object
         public byte[] Grid { 
+            // gets an entire array. Don't try to set individual elements
             get {
                 byte[] byteGrid = new byte[ROWS * COLS];
                 for (int r = 0; r < ROWS; r++)
@@ -23,6 +25,7 @@ namespace TicTacToeGame
                 return byteGrid;
                 } 
 
+            // sets an entire array, not individual elements
             set {
                 for (int r = 0; r < ROWS; r++)
                     for (int c = 0; c < COLS; c++)

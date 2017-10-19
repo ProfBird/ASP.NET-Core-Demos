@@ -51,19 +51,19 @@ namespace TicTacToeGame.Test
             Assert.Equal('O', game.GetTurn());
         }
 
-<<<<<<< Updated upstream
         [Fact]
         public void GridTest()
         {
-            game.Grid[0] = (byte)'X';
-            Assert.Equal(game.GetMark(0,0), "X");
+            // Arrange
+            var grid = game.Grid;  // get a byte array representing the game grid
+            grid[0] = (byte)'X';
+            // Apply
+            game.Grid = grid;
+            // Assert
+            Assert.Equal("X", game.GetMark(0, 0));
         }
 
-        /*
-=======
-
         // Test all the possible winning combinations for X
->>>>>>> Stashed changes
         [Theory]
         [InlineData(0, 0, 0, 1, 0, 2)] // row 1
         [InlineData(1, 0, 1, 1, 1, 2)] // row 2
@@ -75,13 +75,14 @@ namespace TicTacToeGame.Test
         [InlineData(0, 2, 1, 1, 2, 0)] // diagonal 2
         public void CheckForXWinTest(int r1, int c1, int r2, int c2, int r3, int c3)
         {
-            game.Grid[RowColToIndex(r1, c1)] = (byte)'X';
-            game.Grid[RowColToIndex(r2, c2)] = (byte)'X';
-            game.Grid[RowColToIndex(r3, c3)] = (byte)'X';
+            var grid = game.Grid;  // get a byte array to work with
+            grid[RowColToIndex(r1, c1)] = (byte)'X';
+            grid[RowColToIndex(r2, c2)] = (byte)'X';
+            grid[RowColToIndex(r3, c3)] = (byte)'X';
+            game.Grid = grid;
 
             Assert.Equal('X', game.CheckForWinner());
         }
-*/
 
         //********* Private methods *************
 
