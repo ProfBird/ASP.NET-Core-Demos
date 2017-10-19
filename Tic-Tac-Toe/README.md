@@ -1,9 +1,9 @@
 # Tic-Tac-Toe Game
 
-* Loads images of Xs and Os when squares are clicked
+* Page displays images of Xs and Os when squares are clicked
 * Game state is saved in the Session object
 * HTML buttons have name and value attributes that determine arguments sent to the OnPost method
-* Has unit tests
+* Has xUnit fact and theory tests
 
 ----
 
