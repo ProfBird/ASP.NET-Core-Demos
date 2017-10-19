@@ -1,6 +1,4 @@
-using System;
 using Xunit;
-using TicTacToeGame;
 
 namespace TicTacToeGame.Test
 {
@@ -25,30 +23,35 @@ namespace TicTacToeGame.Test
                     if (game.GetMark(r, c) != "blank")
                         allEmpty = false;
             
+            // Verify that the game grid array is empty
             Assert.True(allEmpty);
         }
+
 
         [Fact]
         public void TurnCountTest()
         {
-            Row0X();
-            Assert.Equal(game.TurnCount, 5);
+            Row0X();    // Make 5 moves
+            Assert.Equal(5, game.TurnCount);
         }
 
+
+
         [Fact]
-		public void TestGetTurnX()
+		public void GetTurnXTest()
 		{
-			Row1O();
-			Assert.Equal(game.GetTurn(), 'X');
+			Row1O();    // Make 6 moves
+            Assert.Equal('X', game.GetTurn());
 		}
 
         [Fact]
-		public void TestGetTurnO()
+		public void GetTurnOTest()
         {
-            Row0X();
-            Assert.Equal(game.GetTurn(), 'O');
+            Row0X();    // Make 5 moves
+            Assert.Equal('O', game.GetTurn());
         }
 
+<<<<<<< Updated upstream
         [Fact]
         public void GridTest()
         {
@@ -57,6 +60,10 @@ namespace TicTacToeGame.Test
         }
 
         /*
+=======
+
+        // Test all the possible winning combinations for X
+>>>>>>> Stashed changes
         [Theory]
         [InlineData(0, 0, 0, 1, 0, 2)] // row 1
         [InlineData(1, 0, 1, 1, 1, 2)] // row 2
@@ -66,16 +73,17 @@ namespace TicTacToeGame.Test
         [InlineData(0, 2, 1, 2, 2, 2)] // col 3
         [InlineData(0, 0, 1, 1, 2, 2)] // diagonal 1
         [InlineData(0, 2, 1, 1, 2, 0)] // diagonal 2
-        public void CheckForXWins(int r1, int c1, int r2, int c2, int r3, int c3)
+        public void CheckForXWinTest(int r1, int c1, int r2, int c2, int r3, int c3)
         {
             game.Grid[RowColToIndex(r1, c1)] = (byte)'X';
             game.Grid[RowColToIndex(r2, c2)] = (byte)'X';
             game.Grid[RowColToIndex(r3, c3)] = (byte)'X';
-            Assert.Equal(game.CheckForWinner(), 'X');
+
+            Assert.Equal('X', game.CheckForWinner());
         }
 */
 
-        /********** Private methods *************/
+        //********* Private methods *************
 
         private void Row0X()
         {
@@ -102,6 +110,7 @@ namespace TicTacToeGame.Test
         {
             return r * TicTacToe.ROWS + c;
         }
+       
 	}
 }
 
