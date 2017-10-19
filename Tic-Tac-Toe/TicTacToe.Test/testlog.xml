@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies timestamp="10/18/2017 21:33:00">
+  <assembly name="TicTacToe.Test.dll" environment="64-bit .NET Standard [collection-per-class, parallel (8 threads)]" test-framework="xUnit.net 2.3.0.3820" run-date="2017-10-18" run-time="21:33:00" total="13" passed="13" failed="0" skipped="0" time="0.214" errors="0">
+    <errors />
+    <collection total="13" passed="13" failed="0" skipped="0" name="Test collection for TicTacToeGame.Test.TicTacToeTests" time="0.027">
+      <test name="TicTacToeGame.Test.TicTacToeTests.GetTurnOTest" type="TicTacToeGame.Test.TicTacToeTests" method="GetTurnOTest" time="0.019548" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.TurnCountTest" type="TicTacToeGame.Test.TicTacToeTests" method="TurnCountTest" time="0.003701" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.GetTurnXTest" type="TicTacToeGame.Test.TicTacToeTests" method="GetTurnXTest" time="0.000385" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.GridTest" type="TicTacToeGame.Test.TicTacToeTests" method="GridTest" time="0.001936" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.ConstructorTest" type="TicTacToeGame.Test.TicTacToeTests" method="ConstructorTest" time="0.000715" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 0, r2: 0, c2: 1, r3: 0, c3: 2)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000332" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 1, c1: 0, r2: 1, c2: 1, r3: 1, c3: 2)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000017" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 0, r2: 1, c2: 1, r3: 2, c3: 2)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000006" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 0, r2: 1, c2: 0, r3: 2, c3: 0)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000004" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 1, r2: 1, c2: 1, r3: 2, c3: 1)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000008" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 2, r2: 1, c2: 2, r3: 2, c3: 2)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000003" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 0, r2: 1, c2: 1, r3: 2, c3: 2)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000003" result="Pass" />
+      <test name="TicTacToeGame.Test.TicTacToeTests.CheckForXWinTest(r1: 0, c1: 2, r2: 1, c2: 1, r3: 2, c3: 0)" type="TicTacToeGame.Test.TicTacToeTests" method="CheckForXWinTest" time="0.000004" result="Pass" />
+    </collection>
+  </assembly>
+</assemblies>
