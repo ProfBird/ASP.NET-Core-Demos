@@ -49,6 +49,14 @@ namespace TicTacToeGame.Test
             Assert.Equal(game.GetTurn(), 'O');
         }
 
+        [Fact]
+        public void GridTest()
+        {
+            game.Grid[0] = (byte)'X';
+            Assert.Equal(game.GetMark(0,0), "X");
+        }
+
+        /*
         [Theory]
         [InlineData(0, 0, 0, 1, 0, 2)] // row 1
         [InlineData(1, 0, 1, 1, 1, 2)] // row 2
@@ -65,6 +73,7 @@ namespace TicTacToeGame.Test
             game.Grid[RowColToIndex(r3, c3)] = (byte)'X';
             Assert.Equal(game.CheckForWinner(), 'X');
         }
+*/
 
         /********** Private methods *************/
 
