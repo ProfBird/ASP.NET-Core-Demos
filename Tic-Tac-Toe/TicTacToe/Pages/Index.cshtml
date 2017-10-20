@@ -27,6 +27,12 @@
     </table>
 </form>
 
-<p>Turn for @Model.Game.GetTurn()</p>
-<p>@Model.GetWinner()</p>
+@if (@Model.GetWinner() != "")
+{
+    <p>@Model.GetWinner()</p>
+}
+else
+{
+    <p>Turn for @Model.Game.GetTurn()</p>
+}
 <a href="Index">Start a new game</a>
