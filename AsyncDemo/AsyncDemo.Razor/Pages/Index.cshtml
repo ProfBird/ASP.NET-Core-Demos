@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<section>
+    <a href="Index">Clear messages</a><br />
+	<a asp-page-handler="Normal">A link to a slow Get request</a><br />
+	<a asp-page-handler="Improved">A link to a slow async Get request</a>
+	<p>
+        Messages: <br />
+    	@Model.Message1<br />
+    	@Model.Message2<br />
+    	@Model.Message3
+	</p>
+</section>

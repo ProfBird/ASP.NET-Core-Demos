@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDemo.Console", "AsyncDemo\AsyncDemo.Console.csproj", "{29A8B1BC-9B45-4568-B2E2-92558F677598}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDemo.Razor", "AsyncDemo.Razor\AsyncDemo.Razor.csproj", "{EEF8BDA5-FD41-4022-9E50-836CA537716A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{29A8B1BC-9B45-4568-B2E2-92558F677598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A8B1BC-9B45-4568-B2E2-92558F677598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A8B1BC-9B45-4568-B2E2-92558F677598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF8BDA5-FD41-4022-9E50-836CA537716A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF8BDA5-FD41-4022-9E50-836CA537716A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF8BDA5-FD41-4022-9E50-836CA537716A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF8BDA5-FD41-4022-9E50-836CA537716A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
