@@ -26,12 +26,23 @@ only want code for one app.
         * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties
         * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
     * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
+
   * Tic-Tac-Toe: The classic game
     * Loads images when squares are clicked
     * Game state is saved in the Session object
     * HTML buttons have name and value attributes that determine arguments sent to the OnPost method
     * Has game-play logic in a separate class
     * Has unit tests
+
+  * RomanNumerals - Demonstrates the use of async / await. Three Projects:
+    * RomanConversion - library (dll) project containing the logic code to convert Roman numerals to Decimal digits and vice-versa
+    * RomanConversion.Test - unit tests
+    * RomanNumerals - Razor Pages app that uses the RomanConversion project.
+      * Uses the asp-page-handler tag helper and named handlers
+
+  * AsyncDemo - Demonstrates the use of async / await. Two Projects:
+    * AsyncDemo.Console - main calls an async method with a time dely in it
+    * AsyncDemo.Razor - has a link with an OnGetAsync handler that runs three async methods in parallel
 
 ----
 

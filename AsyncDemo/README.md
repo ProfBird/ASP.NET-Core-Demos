@@ -4,7 +4,7 @@ Demo ASP.NET web app for CS95N at LCC
 
 ## Directory
 
-* AsyncDemo.Console: Demonstrates using async / await with a Task object. The main calls an async method that contains a time delay to simlate a long-running operation.
+* AsyncDemo.Console: Demonstrates using async / await with a Task object. The main calls an async method that contains a time delay to simulate a long-running operation.
 * AsyncDemo.Razor: Demonstrates using async / await with a Task object. One of the event handlers is an async method and it makes multiple calls to a private async method so that all three calls run in parallel.
 ----
 
