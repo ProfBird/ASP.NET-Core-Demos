@@ -7,42 +7,43 @@ only want code for one app.
 
 ## Directory
 
-* __ASP.NET Razor Page apps__
-  * WebPages3Tutorial - This is an updated (translated) version of an older tutorial for ASP.NET Web Pages 3, 
+__ASP.NET Razor Page apps__
+* __WebPages3Tutorial__ - This is an updated (translated) version of an older tutorial for ASP.NET Web Pages 3, 
   [Introduction to ASP.NET Web Programming Using the Razor Syntax]
   (https://docs.microsoft.com/en-us/aspnet/web-pages/overview/getting-started/introducing-razor-syntax-c)
    
-  * MathQuiz, 5 projects:
-    * MathQuiz: A very basic web app that uses minimal Razor Pages features. 
-        * It does have a code-behind (.cshtmlcs) page.
-        * Uses hidden form fields to store the numbers being added so they won't be lost when the submit button on the form is clicked to do an HTTP POST
-    * MathQuiz2: An improved version of this web app
-        * Uses _Viewimports and _Layouts pages demonstrating how imports and common layout features can be shared by all pages
-        * Uses the ASP.NET Session object to store the numbers used in the question so they are saved before doing an HTTP POST
-    * MathQuiz3: Refactored the code-behind and moved all the logic code for the math quiz to a separate class, MathQuiz
-        * In OnGet, an instance of MathQuiz is instantiated using a constructor that generates random numbers. In the code-behind the numbers are stored in the Session object
-        * In OnPost, an instance of MathQuiz is instantiated using a parameterized constructor that takes the numbers that were stored in the Session object as arguments.
-    * MathQuiz4: Uses Tag Helpers and model binding
+* __MathQuiz__, 5 projects:
+  * MathQuiz: A very basic web app that uses minimal Razor Pages features. 
+      * It does have a code-behind (.cshtmlcs) page.
+      * Uses hidden form fields to store the numbers being added so they won't be lost when the submit button on the form is clicked to do an HTTP POST
+  * MathQuiz2: An improved version of this web app
+      * Uses _Viewimports and _Layouts pages demonstrating how imports and common layout features can be shared by all pages
+      * Uses the ASP.NET Session object to store the numbers used in the question so they are saved before doing an HTTP POST
+  * MathQuiz3: Refactored the code-behind and moved all the logic code for the math quiz to a separate class, MathQuiz
+      * In OnGet, an instance of MathQuiz is instantiated using a constructor that generates random numbers. In the code-behind the numbers are stored in the Session object
+      * In OnPost, an instance of MathQuiz is instantiated using a parameterized constructor that takes the numbers that were stored in the Session object as arguments.
+  * MathQuiz4: Uses Tag Helpers and model binding
         * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties
         * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
-    * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
+  * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
 
-  * Tic-Tac-Toe: The classic game
-    * Loads images when squares are clicked
-    * Game state is saved in the Session object
-    * HTML buttons have name and value attributes that determine arguments sent to the OnPost method
-    * Has game-play logic in a separate class
-    * Has unit tests
+* __Tic-Tac-Toe__: The classic game
+  * Loads images when squares are clicked
+  * Game state is saved in the Session object
+  * HTML buttons have name and value attributes that determine arguments sent to the OnPost method
+  * Has game-play logic in a separate class
+  * Has unit tests
 
-  * RomanNumerals - Demonstrates the use of async / await. Three Projects:
+* __RomanNumerals__ - Demonstrates the use of async / await. Three Projects:
     * RomanConversion - library (dll) project containing the logic code to convert Roman numerals to Decimal digits and vice-versa
     * RomanConversion.Test - unit tests
     * RomanNumerals - Razor Pages app that uses the RomanConversion project.
-      * Uses the asp-page-handler tag helper and named handlers
+     * Uses the asp-page-handler tag helper and named handlers
 
-  * AsyncDemo - Demonstrates the use of async / await. Two Projects:
-    * AsyncDemo.Console - main calls an async method with a time dely in it
-    * AsyncDemo.Razor - has a link with an OnGetAsync handler that runs three async methods in parallel
+* __AsyncDemo__ - Demonstrates the use of async / await.
+  Two Projects:
+  * AsyncDemo.Console - main calls an async method with a time dely in it
+  * AsyncDemo.Razor - has a link with an OnGetAsync handler that runs three async methods in parallel
 
 ----
 
