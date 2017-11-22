@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiMovie.Mac", "WebApiMovie\WebApiMovie.Mac.csproj", "{A2046A37-ED8D-459C-9B59-2FC3451EB3C1}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiMovie.Win", "WebApiMovie.Win\WebApiMovie.Win.csproj", "{54B5624E-82B8-4AF3-9E0F-345F1900890F}"
+=======
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92E967B2-2732-449C-8EEC-685F4ADBEA2D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+>>>>>>> origin/master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
