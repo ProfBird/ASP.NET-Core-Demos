@@ -11,16 +11,17 @@ using WebApiMovie.Win.Models;
 namespace WebApiMovie.Win.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20171121171248_initial")]
+    [Migration("20171122214547_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
+                .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiMovie.Models.Movie", b =>
+            modelBuilder.Entity("WebApiMovie.Win.Models.Movie", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();

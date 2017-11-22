@@ -20,7 +20,7 @@ namespace WebApiMovie.Win
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MovieContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("MovieContext"))); 
+                options.UseSqlServer(Configuration.GetConnectionString("MovieContext"))); 
             services.AddMvc();
         }
 
