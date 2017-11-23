@@ -22,7 +22,7 @@ namespace WebApiMovie.Win.Models
 
         [Range(1, 100)]
         [DataType(DataType.Currency)]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(5)]
