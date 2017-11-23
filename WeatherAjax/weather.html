@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajax Weather Demo</title>
+</head>
+
+<body>
+    <script>
+        var ajax = new XMLHttpRequest();
+        ajax.onload = functionName;
+        ajax.onerror = errorFunctionName;
+        ajax.open("GET", "http://api.wunderground.com/api/0e3e69302fba4e56/conditions/q/OR/Eugene.json", true);
+        ajax.send();
+        /*
+        function functionName() {
+            // console.log(this); // log the response
+            if (this.status == 200) { // request succeeded
+                // do something with this.responseText;
+                console.log(this.responseText);
+            } else {
+                // handle more HTTP response codes here;
+            }
+        }
+        */
+
+        function errorFunctionName(e) {
+            console.log(this);
+            console.error(e);
+            // do something with this.status, this.statusText
+        }
+
+        function functionName() {
+            var json = JSON.parse(this.responseText);
+            var currentTemp = json.current_observation.temp_f;
+            alert("Temperature: " + currentTemp);
+            /*
+            document.getElementById("hi-diff").innerHTML = diffHi + "&deg;";
+            document.getElementById("lo-diff").innerHTML = diffLo + "&deg;";
+            */
+        }
+
+        function errorFunctionName(e) {
+            window.alert("Could not retrieve yesterday's forecast. Please try again later.");
+        }
+    </script>
+</body>
+
+</html>
