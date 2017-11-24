@@ -33,11 +33,14 @@
         function functionName() {
             var json = JSON.parse(this.responseText);
             var currentTemp = json.current_observation.temp_f;
-            alert("Temperature: " + currentTemp);
-            /*
-            document.getElementById("hi-diff").innerHTML = diffHi + "&deg;";
-            document.getElementById("lo-diff").innerHTML = diffLo + "&deg;";
-            */
+            document.getElementById("temp").innerHTML = currentTemp + "&deg; F";
+            var humidity = json.current_observation.relative_humidity;
+            document.getElementById("humidity").innerHTML = humidity;
+            var pressure = json.current_observation.pressure_in;
+            document.getElementById("pressure").innerHTML = pressure + " inches";
+            var precipitation = json.current_observation.precip_1hr_in;
+            document.getElementById("precip").innerHTML = precipitation + " inches/hour";
+
         }
 
         function errorFunctionName(e) {
@@ -45,5 +48,10 @@
         }
     </script>
 </body>
-
+<h2>Current Conditions in Eugene, OR</h2>
+<b>Temperature: <b><span id="temp"></span><br>
+<b>Humidity: <b><span id="humidity"></span><br>
+<b>Pressure: <b><span id="pressure"></span><br>
+<b>Precipitation: <b><span id="precip"></span><br>
+        
 </html>
