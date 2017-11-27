@@ -31,7 +31,7 @@ namespace WebApiMovie.Win
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
