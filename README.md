@@ -45,6 +45,22 @@ __ASP.NET Razor Page apps__
   * AsyncDemo.Console - main calls an async method with a time dely in it
   * AsyncDemo.Razor - has a link with an OnGetAsync handler that runs three async methods in parallel
 
+  __ASP.NET Web API app__
+
+* __WebApiMovie__ - Demonstrates the use of async / await.
+  Two Projects:
+  * AsyncDemo.Mac - Uses a SQLite database
+  * AsyncDemo.Win - Uses SQL Express LocalDB
+
+  Both projects present a REST/JSON Web API for managing a database of movie data. These are the endpoints (HTTP Verb, URL)
+  * GET, baseURL/api/movie - returns an array of movie objects
+  * GET, baseURL/api/movie/id - returns a movie object with the give id (an integer)
+  * POST, baseURL/api/movie - adds a movie to the database
+  * PUT, baseURL/api/movie - updates a movie in the database
+  * DELETE, baseURL/api/movie/id - removes a movie from the database
+
+  The wwwroot folder contains a web client for the web service
+
 ----
 
 I wrote these apps for use with CS295N, Web Development 1:ASP.NET Android, a class I teach at Lane Community College. Other course materials are here: <https://github.com/LCC-CIT/CS295N-CourseMaterials>
