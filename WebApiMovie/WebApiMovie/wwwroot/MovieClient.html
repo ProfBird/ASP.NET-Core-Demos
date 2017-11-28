@@ -7,7 +7,7 @@
     <title></title>
 </head>
 
-<body onload=getMovies()>
+<body onload=init()>
 
     <h1>Movie Web Service Client</h1>
 
@@ -26,14 +26,23 @@
         </tbody>
     </table>
     <h2>Add a Movie</h2>
-    <form>
-        Title:
-        <input name="title"><br> Date:
-        <input name="releaseDate"><br> Genre:
-        <input name="genre"><br> Price:
-        <input name="price"><br> Rating:
-        <input name="Rating"><br>
-        <button>Enter</button>
+    <form id="postForm">
+        <label for="title">Title</label>
+        <input name="title" placeholder="My Movie">
+        <br>
+        <label for="releaseDate">Date</label>
+        <input name="releaseDate" placeholder="12/31/2000">
+        <br>
+        <label for="genre">Genre</label>
+        <input name="genre" placeholder="Drama">
+        <br>
+        <label for="price">Price</label>
+        <input name="price" placeholder="9.99">
+        <br>
+        <label for="rating">Rating</label>
+        <input name="rating" placeholder="PG">
+        <br><br>
+        <button>Send Data</button>
     </form>
 </body>
 
