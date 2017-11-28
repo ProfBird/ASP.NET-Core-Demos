@@ -52,7 +52,7 @@ __ASP.NET Razor Page apps__
   * AsyncDemo.Mac - Uses a SQLite database
   * AsyncDemo.Win - Uses SQL Express LocalDB
   * The wwwroot folder contains a web client for the web service.
-  
+
   Both projects present a REST/JSON Web API for managing a database of movie data. These are the endpoints (HTTP Verb, URL)
   * GET, baseURL/api/movie - returns an array of movie objects
   * GET, baseURL/api/movie/id - returns a movie object with the give id (an integer)
@@ -64,7 +64,7 @@ __ASP.NET Razor Page apps__
 
 ----
 
-I wrote these apps for use with CS295N, Web Development 1:ASP.NET Android, a class I teach at Lane Community College. Other course materials are here: <https://github.com/LCC-CIT/CS295N-CourseMaterials>
+I wrote these apps for use with CS295N, Web Development 1:ASP.NET, a class I teach at Lane Community College. Other course materials are here: <https://github.com/LCC-CIT/CS295N-CourseMaterials>
 
 My blog:
 <https://birdsbits.wordpress.com>
