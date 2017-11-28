@@ -47,11 +47,12 @@ __ASP.NET Razor Page apps__
 
   __ASP.NET Web API app__
 
-* __WebApiMovie__ - Demonstrates the use of async / await.
+* __WebApiMovie__ - Demonstrates a Web API and Client.
   Two Projects:
   * AsyncDemo.Mac - Uses a SQLite database
   * AsyncDemo.Win - Uses SQL Express LocalDB
-
+  * The wwwroot folder contains a web client for the web service.
+  
   Both projects present a REST/JSON Web API for managing a database of movie data. These are the endpoints (HTTP Verb, URL)
   * GET, baseURL/api/movie - returns an array of movie objects
   * GET, baseURL/api/movie/id - returns a movie object with the give id (an integer)
