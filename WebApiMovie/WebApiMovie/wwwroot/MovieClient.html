@@ -8,14 +8,14 @@
         // set up event handlers for this page
         function init() {
             // set up the event handler for posting movie data
-            var form = document.getElementById("postForm");
+            var form = document.getElementById("movieForm");
             form.onsubmit = function(e) {
                 // prevent the form from sending an HTTP request when it is submitted
                 e.preventDefault();
-                sendMovie();
+                addMovie();
             };
             // Fill the table on the page with movie data when the page opens
-            getMovies(fillTable);
+            getAllMovies(fillTable);
         }
     </script>
     <title>Movie API Client</title>
@@ -24,6 +24,11 @@
 <body onload=init()>
 
     <h1>Movie Web Service Client</h1>
+
+    <nav>
+        <a href="#addMovie">Add a movie to the database</a><br>
+        <a href="Update.html">Edit a movie already in the database</a><br>
+    </nav>
 
     <h2>List of all Movies</h2>
     <table border="1">
@@ -39,25 +44,27 @@
         <tbody>
         </tbody>
     </table>
-    <h2>Add or Update a Movie</h2>
-    <form id="postForm">
-        <label for="title">Title</label>
-        <input name="title" placeholder="My Movie">
-        <br>
-        <label for="releaseDate">Date</label>
-        <input name="releaseDate" placeholder="12/31/2000">
-        <br>
-        <label for="genre">Genre</label>
-        <input name="genre" placeholder="Drama">
-        <br>
-        <label for="price">Price</label>
-        <input name="price" placeholder="9.99">
-        <br>
-        <label for="rating">Rating</label>
-        <input name="rating" placeholder="PG">
-        <br><br>
-        <button>Add Movie</button>
-    </form>
+    <section id="addMovie">
+        <h2>Add a Movie</h2>
+        <form id="movieForm">
+            <label for="title">Title</label>
+            <input name="title" placeholder="My Movie">
+            <br>
+            <label for="releaseDate">Date</label>
+            <input name="releaseDate" placeholder="12/31/2000">
+            <br>
+            <label for="genre">Genre</label>
+            <input name="genre" placeholder="Drama">
+            <br>
+            <label for="price">Price</label>
+            <input name="price" placeholder="9.99">
+            <br>
+            <label for="rating">Rating</label>
+            <input name="rating" placeholder="PG">
+            <br><br>
+            <button>Add Movie</button>
+        </form>
+    </section>
 </body>
 
 </html>

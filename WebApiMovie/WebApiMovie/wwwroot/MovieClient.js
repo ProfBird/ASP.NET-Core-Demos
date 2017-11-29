@@ -1,7 +1,9 @@
 ﻿// const MOVIE_URL = "http://localhost:5000/api/movie";
 const MOVIE_URL = "http://webapimovie.azurewebsites.net/api/movie";
 
-/********************* Get all movies from the database *************/
+/***********************************************************/
+/************* Get all movies from the database ************/
+/***********************************************************/
 
 function getAllMovies(onloadHandler) {
     var xhr = new XMLHttpRequest();
@@ -42,7 +44,9 @@ function errorHandler(e) {
     window.alert("Movie API request failed.");
 }
 
-/***************** Add a movie to the database *********************/
+/***********************************************************/
+/**************** Add a movie to the database **************/
+/***********************************************************/
 
 // Generate a movie object from the HTML form data
 function getFormData() {
@@ -80,7 +84,6 @@ function addMovie() {
     xhr.onreadystatechange = function() {
         // if readyState is "done" and status is "success"
         if (xhr.readyState == 4 && xhr.status == 200) {
-            // window.location.reload(); // referesh the page
             addRow(data);
         }
     };
@@ -89,11 +92,13 @@ function addMovie() {
     xhr.send(dataString);
 }
 
-/************ Update a movie already in the database *************/
+/***********************************************************/
+/********* Update a movie already in the database **********/
+/***********************************************************/
 
 // Fill the select (drop down list) with movie titles
-// Called when page loads
-function fillSelect() {
+// Called by getAllMovies which is called by the page load event
+function fillSelectList() {
     var movies = JSON.parse(this.responseText);
     var sel = document.getElementsByTagName('select')[0];
     for (var i in movies) {
@@ -101,6 +106,15 @@ function fillSelect() {
         opt.setAttribute("value", movies[i].id);
         opt.innerHTML = movies[i].title;
         sel.appendChild(opt);
+    }
+}
+
+function clearSelectList() {
+    var select = document.getElementsByTagName("select")[0];
+    var length = select.options.length;
+    // remove all but the first option element
+    for (i = 1; i < length; i++) {
+        select.options[i] = null;
     }
 }
 
@@ -141,5 +155,26 @@ function updateMovie() {
     // serialize the data to a string so it can be sent
     var dataString = JSON.stringify(data);
     xhr.send(dataString);
+    clearSelectList();
 }
-/******************** Delete a movie ***************/
+
+/**************************************************/
+/******************** Delete a movie **************/
+/**************************************************/
+
+// Remove a movie from the database
+function deleteMovie() {
+    var data = getFormData();
+    var xhr = new XMLHttpRequest();
+    xhr.open("DELETE", MOVIE_URL + "/" + data.id, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onerror = errorHandler;
+    xhr.onreadystatechange = function() {
+        // if readyState is "done" and status is "success"
+        if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 204) {
+            clearSelectList();
+            getAllMovies(fillSelectList);
+        }
+    }
+    xhr.send();
+}

@@ -1,37 +1,32 @@
 ﻿// const MOVIE_URL = "http://localhost:5000/api/movie";
 const MOVIE_URL = "http://webapimovie.azurewebsites.net/api/movie";
 
-function init() {
-    // set up the event handler for posting movie data
-    var form = document.getElementById("postForm");
-    form.onsubmit = function(e) {
-        // prevent the form from sending an HTTP request when it is submitted
-        e.preventDefault();
-        sendMovie();
-    };
-    // Fill the table on the page with movie data when the page opens
-    getMovies();
+/***********************************************************/
+/************* Get all movies from the database ************/
+/***********************************************************/
+
+function getAllMovies(onloadHandler) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = onloadHandler;
+    xhr.onerror = errorHandler;
+    xhr.open("GET", MOVIE_URL, true);
+    xhr.send();
 }
 
-function getMovies() {
-    var ajax = new XMLHttpRequest();
-    ajax.onload = parseMovies;
-    ajax.onerror = errorHandler;
-    ajax.open("GET", MOVIE_URL, true);
-    ajax.send();
-}
-
-function parseMovies() {
+// Loop through the movies and put them in the table
+function fillTable() {
     var movies = JSON.parse(this.responseText);
     for (var i in movies) {
         addRow(movies[i]);
     }
 }
 
+// Put info for one movie in a table row
 function addRow(movie) {
     var tbody = document.getElementsByTagName('tbody')[0];
     var fields = ["title", "releaseDate", "genre", "price", "rating"];
     var tr = document.createElement('tr');
+    // Add a cell with the value from each field
     for (var i in fields) {
         var td = document.createElement('td');
         var field = fields[i];
@@ -49,20 +44,28 @@ function errorHandler(e) {
     window.alert("Movie API request failed.");
 }
 
-/********* Send form data as JSON in an HTTP POST ************/
+/***********************************************************/
+/**************** Add a movie to the database **************/
+/***********************************************************/
 
-function sendMovie() {
-
-    var form = document.getElementById('postForm');
-
-    // collect the form data while iterating over the inputs
+// Generate a movie object from the HTML form data
+function getFormData() {
+    // collect the form data by iterating over the input elements
     var data = {};
+    var form = document.getElementById('movieForm');
     for (var i = 0; i < form.length; ++i) {
         var input = form[i];
         if (input.name) {
             data[input.name] = input.value;
         }
     }
+    return data;
+}
+
+// Send a new movie object to the database
+function addMovie() {
+    var data = getFormData();
+
     /* // Fake data for testing
     var data = {
         "title": "Lord of the Rings: The Fellowship of the Ring",
@@ -72,20 +75,106 @@ function sendMovie() {
         "rating": "PG-13"
     };  */
 
-    // create an HTTP request
-    var ajax = new XMLHttpRequest();
+    // create an HTTP POST request
+    var xhr = new XMLHttpRequest();
     // Parameters: request type, URL, async (if false, send does not return until a response is recieved)
-    ajax.open("POST", MOVIE_URL, true);
-    ajax.setRequestHeader("Content-Type", "application/json");
-    ajax.onerror = errorHandler;
-    ajax.onreadystatechange = function() {
+    xhr.open("POST", MOVIE_URL, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onerror = errorHandler;
+    xhr.onreadystatechange = function() {
         // if readyState is "done" and status is "success"
-        if (ajax.readyState == 4 && ajax.status == 200) {
-            // window.location.reload(); // referesh the page
+        if (xhr.readyState == 4 && xhr.status == 200) {
             addRow(data);
         }
     };
     // serialize the data to a string so it can be sent
     var dataString = JSON.stringify(data);
-    ajax.send(dataString);
+    xhr.send(dataString);
+}
+
+/***********************************************************/
+/********* Update a movie already in the database **********/
+/***********************************************************/
+
+// Fill the select (drop down list) with movie titles
+// Called by getAllMovies which is called by the page load event
+function fillSelectList() {
+    var movies = JSON.parse(this.responseText);
+    var sel = document.getElementsByTagName('select')[0];
+    for (var i in movies) {
+        var opt = document.createElement("option");
+        opt.setAttribute("value", movies[i].id);
+        opt.innerHTML = movies[i].title;
+        sel.appendChild(opt);
+    }
+}
+
+function clearSelectList() {
+    var select = document.getElementsByTagName("select")[0];
+    var length = select.options.length;
+    // remove all but the first option element
+    for (i = 1; i < length; i++) {
+        select.options[i] = null;
+    }
+}
+
+// get one move by it's ID
+// onloadHandler will be fillForm()
+// Called when a movie is selected from the select list
+function getMovieById(event) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = fillForm;
+    xhr.onerror = errorHandler;
+    xhr.open("GET", MOVIE_URL + "/" + event.target.value, true);
+    xhr.send();
+}
+
+// puts data from existing movie into the form 
+// called back by getMovieById
+function fillForm() {
+    var movie = JSON.parse(this.responseText);
+    var inputs = document.getElementsByTagName("input");
+    inputs[0].value = movie.id;
+    inputs[1].value = movie.title;
+    inputs[2].value = movie.releaseDate.substr(0, 10); // just the date, not the time
+    inputs[3].value = movie.genre;
+    inputs[4].value = movie.price;
+    inputs[5].value = movie.rating;
+}
+
+// Send new data for an existing movie to the database
+function updateMovie() {
+    var data = getFormData();
+
+    // create an HTTP PUT request
+    var xhr = new XMLHttpRequest();
+    xhr.open("PUT", MOVIE_URL + "/" + data.id, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onerror = errorHandler;
+
+    // serialize the data to a string so it can be sent
+    var dataString = JSON.stringify(data);
+    xhr.send(dataString);
+    clearSelectList();
+}
+
+/**************************************************/
+/******************** Delete a movie **************/
+/**************************************************/
+
+// Remove a movie from the database
+function deleteMovie() {
+    var data = getFormData();
+    var xhr = new XMLHttpRequest();
+    xhr.open("DELETE", MOVIE_URL + "/" + data.id, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onerror = errorHandler;
+    xhr.onreadystatechange = function() {
+        // if readyState is "done" and status is "success"
+        if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 204) {
+            clearSelectList();
+            getAllMovies(fillSelectList);
+        }
+    }
+    xhr.send();
 }
