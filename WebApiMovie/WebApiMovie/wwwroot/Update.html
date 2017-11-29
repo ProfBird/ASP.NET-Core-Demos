@@ -5,42 +5,39 @@
     <meta charset="utf-8" />
     <script src="MovieClient.js"></script>
     <script>
-        // set up event handlers for this page
+        // set event handlers and fill the select list
         function init() {
             // set up the event handler for posting movie data
-            var form = document.getElementById("postForm");
-            form.onsubmit = function(e) {
+            var form = document.getElementById("movieForm");
+            form.onsubmit = function(event) {
                 // prevent the form from sending an HTTP request when it is submitted
-                e.preventDefault();
-                sendMovie();
+                event.preventDefault();
+                updateMovie();
             };
+
+            // set the event handler for the select list
+            var sel = document.getElementsByTagName("select")[0];
+            sel.onchange = getMovieById;
+
             // Fill the table on the page with movie data when the page opens
-            getMovies(fillTable);
+            getAllMovies(fillSelect);
         }
     </script>
-    <title>Movie API Client</title>
+    <title></title>
 </head>
 
 <body onload=init()>
 
-    <h1>Movie Web Service Client</h1>
+    <h1>Update Information about a Movie</h1>
 
-    <h2>List of all Movies</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Genre</th>
-                <th>Price</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <h2>Add or Update a Movie</h2>
-    <form id="postForm">
+    <form id="movieForm">
+        <p>
+            <select>
+                <option value="0">Choose a movie</option>
+            </select>
+        </p>
+        <input name="id" hidden>
+
         <label for="title">Title</label>
         <input name="title" placeholder="My Movie">
         <br>
@@ -56,7 +53,7 @@
         <label for="rating">Rating</label>
         <input name="rating" placeholder="PG">
         <br><br>
-        <button>Add Movie</button>
+        <button>Update Movie</button>
     </form>
 </body>
 
