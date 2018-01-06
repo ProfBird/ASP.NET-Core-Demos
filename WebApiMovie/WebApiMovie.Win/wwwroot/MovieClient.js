@@ -1,5 +1,5 @@
-﻿// const MOVIE_URL = "http://localhost:5000/api/movie";
-const MOVIE_URL = "http://webapimovie.azurewebsites.net/api/movie";
+﻿const MOVIE_URL = "http://localhost:5000/api/movie";
+// const MOVIE_URL = "http://webapimovie.azurewebsites.net/api/movie";
 
 /***********************************************************/
 /************* Get all movies from the database ************/
