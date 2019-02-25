@@ -48,17 +48,22 @@
 <body>
     <div class="container-fluid">
         <h1>AJAX Demo: OpenWeatherMap Web API</h1>
-        <p>This web page uses JavaScript to pull data from the
-            <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap Web API</a>. To see the code, view the page source.</p>
-        <p>To obtain an API key, <a href="https://home.openweathermap.org/users/sign_up" target="_blank">register</a> for a free account.</p>
+        <p>
+            This web page uses JavaScript to pull data from the
+            <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap Web API</a>.<br> To see the code, view the page source.
+            <br> To obtain an API key, <a href="https://home.openweathermap.org/users/sign_up" target="_blank">register</a> for a free account.</p>
         <form>
             Enter API key: <input id="keyTextBox" type="text">
             <input type="button" value="Enter" onclick="getWeather()">
         </form>
-        <p>HTTP Request: <a id="request" href=" https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=b6907d289e10d714a6e88b30761fae22" target="_blank">Sample OpenWeatherMap API Request</a></p>
+        <p>
+            HTTP Request: <a id="request" href=" https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=b6907d289e10d714a6e88b30761fae22" target="_blank">Sample OpenWeatherMap API Request</a><br />
+            <i>The response to this request is best viewed using FireFox.</i>
+        </p>
         <h2>Current Conditions in Eugene, OR</h2>
         <h3 id="datetime">Today's date and time</h3>
-        <p><b>Temperature: </b><span id="temp"></span><br>
+        <p>
+            <b>Temperature: </b><span id="temp"></span><br>
             <b>Humidity: </b><span id="humidity"></span><br>
             <b>Pressure: </b><span id="pressure"></span><br>
             <b>Precipitation: </b><span id="precip"></span>
