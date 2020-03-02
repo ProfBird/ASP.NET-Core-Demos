@@ -11,37 +11,42 @@ namespace AsyncBreakfast.V3
 
     class Program
     {
-        // <SnippetMain>
         static async Task Main(string[] args)
         {
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
-            var eggsTask = FryEggsAsync(2);
-            var baconTask = FryBaconAsync(3);
-            var toastTask = MakeToastWithButterAndJamAsync(2);
 
-            var eggs = await eggsTask;
+            // Start async tasks
+            Task<Egg> eggsTask = FryEggsAsync(2);
+            Task<Bacon> baconTask = FryBaconAsync(3);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
+
+            // Wait for tasks to complete
+            Egg eggs = await eggsTask;
             Console.WriteLine("eggs are ready");
-            var bacon = await baconTask;
+            Bacon bacon = await baconTask;
             Console.WriteLine("bacon is ready");
-            var toast = await toastTask;
+            Toast toast = await toastTask;
             Console.WriteLine("toast is ready");
+
+            // All tasks have completed
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
 
             Console.WriteLine("Breakfast is ready!");
 
-            // <SnippetComposeToastTask>
+
+            // Composite async and synchronous operations
+            // This is a local function, see https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions
             async Task<Toast> MakeToastWithButterAndJamAsync(int number)
             {
-                var toast = await ToastBreadAsync(number);
+                Toast toast = await ToastBreadAsync(number);
                 ApplyButter(toast);
                 ApplyJam(toast);
                 return toast;
             }
-            // </SnippetComposeToastTask>
+
         }
-        // </SnippetMain>
 
         private static Juice PourOJ()
         {
