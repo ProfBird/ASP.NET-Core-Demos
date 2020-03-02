@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Written By Brian Bird, fall 2017
+    Revised winter 2019 to use the
+    OpenWathermap Web API -->
+    <meta charset="utf-8">
+    <title>Ajax Weather Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        function readResponse() {
+            var json = JSON.parse(this.responseText);
+            var dt = new Date(json.dt * 1000);
+            document.getElementById("datetime").innerHTML = dt.toString()
+            var currentTemp = json.main.temp;
+            document.getElementById("temp").innerHTML = currentTemp + "&deg; F";
+            var humidity = json.main.humidity;
+            document.getElementById("humidity").innerHTML = humidity + "%";
+            var pressure = json.main.pressure;
+            document.getElementById("pressure").innerHTML = pressure + " mbar";
+            var precipitation = json["rain"]["1h"]; // 1h is an illeagal identifier, needed to use bracket notation
+            document.getElementById("precip").innerHTML = precipitation + " inches/hour";
+        }
+
+        function handleError(e) {
+            window.alert("Could not retrieve today's weather. " + "error: " + e + "status: " + ajax.status);
+        }
+
+        function getWeather() {
+            var url = "https://api.openweathermap.org/data/2.5/weather?id=5725846&units=imperial"; //id = Eugene, OR
+            var key = document.getElementById("keyTextBox").value;
+            if (key != "") {
+                url += "&appid=" + key;
+                var urlLink = document.getElementById("request");
+                urlLink.innerHTML = url;
+                urlLink.setAttribute("href", url);
+                var ajax = new XMLHttpRequest(); // create an XHR object
+                ajax.onload = readResponse; // method to be called when a weather response is loaded
+                ajax.onerror = handleError;
+                ajax.open("GET", url); // asynch = true by default
+                ajax.send();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>AJAX Demo: OpenWeatherMap Web API</h1>
+        <p>
+            This web page uses JavaScript to pull data from the
+            <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap Web API</a>.<br> To see the code, view the page source.
+            <br> To obtain an API key, <a href="https://home.openweathermap.org/users/sign_up" target="_blank">register</a> for a free account.</p>
+        <form>
+            Enter API key: <input id="keyTextBox" type="text">
+            <input type="button" value="Enter" onclick="getWeather()">
+        </form>
+        <p>
+            HTTP Request: <a id="request" href=" https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=b6907d289e10d714a6e88b30761fae22" target="_blank">Sample OpenWeatherMap API Request</a><br />
+            <i>The response to this request is best viewed using FireFox.</i>
+        </p>
+        <h2>Current Conditions in Eugene, OR</h2>
+        <h3 id="datetime">Today's date and time</h3>
+        <p>
+            <b>Temperature: </b><span id="temp"></span><br>
+            <b>Humidity: </b><span id="humidity"></span><br>
+            <b>Pressure: </b><span id="pressure"></span><br>
+            <b>Precipitation: </b><span id="precip"></span>
+        </p>
+        <footer>
+            Created by Brian Bird, 2019
+        </footer>
+    </div>
+</body>
+
+</html>

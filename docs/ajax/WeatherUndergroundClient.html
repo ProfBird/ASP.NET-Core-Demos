@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <!--Written By Brian Bird, fall 2017
+    Uses the WeatherUndergroud Web API -->
+    <meta charset="utf-8">
     <title>Ajax Weather Demo</title>
 </head>
 
@@ -32,6 +35,8 @@
 
         function functionName() {
             var json = JSON.parse(this.responseText);
+            var datetime = json.current_observation.observation_time_rfc822;
+            document.getElementById("datetime").innerHTML = datetime.substring(0, 22);
             var currentTemp = json.current_observation.temp_f;
             document.getElementById("temp").innerHTML = currentTemp + "&deg; F";
             var humidity = json.current_observation.relative_humidity;
@@ -47,11 +52,13 @@
             window.alert("Could not retrieve yesterday's forecast. Please try again later.");
         }
     </script>
+
+    <h2>Current Conditions in Eugene, OR</h2>
+    <h3 id="datetime">Today's date and time</h3>
+    <b>Temperature: </b><span id="temp"></span><br>
+    <b>Humidity: </b><span id="humidity"></span><br>
+    <b>Pressure: </b><span id="pressure"></span><br>
+    <b>Precipitation: </b><span id="precip"></span><br>
 </body>
-<h2>Current Conditions in Eugene, OR</h2>
-<b>Temperature: <b><span id="temp"></span><br>
-<b>Humidity: <b><span id="humidity"></span><br>
-<b>Pressure: <b><span id="pressure"></span><br>
-<b>Precipitation: <b><span id="precip"></span><br>
-        
+
 </html>
