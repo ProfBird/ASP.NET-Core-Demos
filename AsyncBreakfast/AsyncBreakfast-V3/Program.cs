@@ -37,7 +37,7 @@ namespace AsyncBreakfast.V3
 
 
             // Composite async and synchronous operations
-            // This is a local function, see https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions
+            // This is also a local function, see https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions
             async Task<Toast> MakeToastWithButterAndJamAsync(int number)
             {
                 Toast toast = await ToastBreadAsync(number);
