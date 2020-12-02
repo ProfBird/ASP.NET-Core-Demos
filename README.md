@@ -13,19 +13,19 @@ __ASP.NET Razor Page apps__
   (https://docs.microsoft.com/en-us/aspnet/web-pages/overview/getting-started/introducing-razor-syntax-c)
    
 * __MathQuiz__, 5 projects:
-  * MathQuiz: A very basic web app that uses minimal Razor Pages features. 
-      * It does have a code-behind (.cshtmlcs) page.
-      * Uses hidden form fields to store the numbers being added so they won't be lost when the submit button on the form is clicked to do an HTTP POST
+  * MathQuiz: A very basic web app that uses minimal Razor Pages features.
+     * It does have a code-behind (.cshtmlcs) page.
+     * Uses hidden form fields to store the numbers being added so they won't be lost when the submit button on the form is clicked to do an HTTP POST.
   * MathQuiz2: An improved version of this web app
-      * Uses _Viewimports and _Layouts pages demonstrating how imports and common layout features can be shared by all pages
-      * Uses the ASP.NET Session object to store the numbers used in the question so they are saved before doing an HTTP POST
-  * MathQuiz3: Refactored the code-behind and moved all the logic code for the math quiz to a separate class, MathQuiz
-      * In OnGet, an instance of MathQuiz is instantiated using a constructor that generates random numbers. In the code-behind the numbers are stored in the Session object
-      * In OnPost, an instance of MathQuiz is instantiated using a parameterized constructor that takes the numbers that were stored in the Session object as arguments.
+     * Uses _Viewimports and _Layouts pages demonstrating how imports and common layout features can be shared by all pages.
+     * Uses the ASP.NET Session object to store the numbers used in the question so they are saved before doing an HTTP POST.
+  * MathQuiz3: Refactored the code-behind and moved all the logic code for the math quiz to a separate class, MathQuiz.
+     * In OnGet, an instance of MathQuiz is instantiated using a constructor that generates random numbers. In the code-behind the numbers are stored in the Session object.
+     * In OnPost, an instance of MathQuiz is instantiated using a parameterized constructor that takes the numbers that were stored in the Session object as arguments.
   * MathQuiz4: Uses Tag Helpers and model binding
-        * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties
-        * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
-  * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4
+     * The model properties are simplified because the properties in MathQuiz are now directly used as the code-behind model properties.
+     * In OnPost, the Answer fileld value is automatically transferred to MathQuiz.Answer
+  * MathQuiz.Tests: Unit tests for the MathQuiz class in MathQuiz4.
 
 * __Tic-Tac-Toe__: The classic game
   * Loads images when squares are clicked
@@ -44,6 +44,13 @@ __ASP.NET Razor Page apps__
   Two Projects:
   * AsyncDemo.Console - main calls an async method with a time dely in it
   * AsyncDemo.Razor - has a link with an OnGetAsync handler that runs three async methods in parallel
+
+* __LinqDemo__ - Demonstrates the use of Language Integrated Query.
+  Two Projects:
+  * LinqExercise.Dos
+    Two exercises where a Linq query needs to be added to the code. Uses the same list of planets, but different queries from those in the demo.
+  * LinqDemo.Dos
+    Demonstrates the use of Linq through a series of quieries on a list of planets.
 
   __ASP.NET Web API app__
 
