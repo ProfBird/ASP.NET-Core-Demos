@@ -11,7 +11,7 @@ __ASP.NET Razor Page apps__
 * __WebPages3Tutorial__ - This is an updated (translated) version of an older tutorial for ASP.NET Web Pages 3, 
   [Introduction to ASP.NET Web Programming Using the Razor Syntax]
   (https://docs.microsoft.com/en-us/aspnet/web-pages/overview/getting-started/introducing-razor-syntax-c)
-   
+  
 * __MathQuiz__, 5 projects:
   * MathQuiz: A very basic web app that uses minimal Razor Pages features.
      * It does have a code-behind (.cshtmlcs) page.
@@ -47,13 +47,16 @@ __ASP.NET Razor Page apps__
 
 * __LinqDemo__ - Demonstrates the use of Language Integrated Query.
   Two Projects:
-  * LinqExercise.Dos
-    Two exercises where a Linq query needs to be added to the code. Uses the same list of planets, but different queries from those in the demo.
   * LinqDemo.Dos
-    Demonstrates the use of Linq through a series of quieries on a list of planets.
-
+    
+    Demonstrates the use of LINQ through a series of queries on a list of planet objects.
+    
+* LinqExercise.Dos
+    
+  Solution for two exercises in the these [CS295N lecture notes](https://lcc-cit.github.io/CS295N-CourseMaterials/LectureNotes/CS295N-LN-WK10-D1-SeedData+LINQ.html) with LINQ expressions that use the same list of planets, but different queries from those in the demo.
+  
   __ASP.NET Web API app__
-
+  
 * __WebApiMovie__ - Demonstrates a Web API and Client.
   Two Projects:
   * AsyncDemo.Mac - Uses a SQLite database
