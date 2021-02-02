@@ -7,19 +7,23 @@ namespace AsyncBreakfast.Final
 {
     class Program
     {
-        // <SnippetMain>
         static async Task Main(string[] args)
         {
-            Coffee cup = PourCoffee();
+            // No Async methods here
+            Coffee cup = PourCoffee();  // blocks execution
             Console.WriteLine("coffee is ready");
-            var eggsTask = FryEggsAsync(2);
-            var baconTask = FryBaconAsync(3);
-            var toastTask = MakeToastWithButterAndJamAsync(2);
 
-            // <SnippetAwaitAnyTask>
+            // Create tasks, execution starts on each one, non-blocking
+            Task<Egg> eggsTask = FryEggsAsync(2);
+            Task<Bacon> baconTask = FryBaconAsync(3);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
+
+            // Put the Task objects in a List
             var allTasks = new List<Task>{eggsTask, baconTask, toastTask};
+            // Loop while there are still Task objects in the List
             while (allTasks.Any())
             {
+                // When a Task is done, say it's done and remove it from the List
                 Task finished = await Task.WhenAny(allTasks);
                 if (finished == eggsTask)
                 {
@@ -35,20 +39,23 @@ namespace AsyncBreakfast.Final
                 }
                 allTasks.Remove(finished);
             }
+
+
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
             Console.WriteLine("Breakfast is ready!");
-            // </SnippetAwaitAnyTask>
 
             async Task<Toast> MakeToastWithButterAndJamAsync(int number)
             {
-                var toast = await ToastBreadAsync(number);
-                ApplyButter(toast);
+                // Await blocks the thread for this method, but not the main thread
+                Toast toast = await ToastBreadAsync(number);
+                // normal, non-async, methods
+                ApplyButter(toast);  
                 ApplyJam(toast);
-                return toast;
+                // Just returning a Toast object here, but it gets converted to a Task
+                return toast; 
             }
         }
-        // </SnippetMain>
 
         private static Juice PourOJ()
         {
