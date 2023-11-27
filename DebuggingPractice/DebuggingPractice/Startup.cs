@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+// TODO: Move the applicable code into program.cs and delete this file.
 namespace HttpPractice
 {
     public class Startup
